@@ -1,0 +1,109 @@
+/*
+NAMA : SANDA FIONA
+NPM : 227064516091
+ */
+package sandafionaoop;
+class Karyawan {
+      String NIP;
+      String nama;
+      String jenisKelamin;
+      int jumlahHari;
+      int totalGaji;
+      int absenKerja;
+      
+    void karyawan (String NIP, String nama, String jenisKelamin){
+        this.NIP = NIP;
+        this.nama = nama;
+        this.jenisKelamin = jenisKelamin;
+    }
+    void absenKerja(){
+        System.out.println("Absen Kerja    :"+absenKerja);
+    }
+    void hitungGaji (){
+        System.out.println("Total Gaji     :"+(jumlahHari-absenKerja)*(50000));
+    }
+     void hitungGaji(int jumlahHari){
+        this.jumlahHari = jumlahHari;
+        System.out.println("Jumlah Hari     :"+jumlahHari);
+    }
+}
+class Dosen extends Karyawan {
+    String golongan;
+    int jumlahSks;
+    int upahPersks;
+    Dosen(){
+        this.golongan = golongan;
+    }
+    @Override
+    void hitungGaji(){
+        System.out.println("Total Gaji Dosen    :"+jumlahSks*upahPersks*jumlahHari);
+    }
+}
+class Staff extends Karyawan {
+    
+}
+public class SandaFionaOop {
+    public static void main(String[] args) {
+       
+        System.out.println();
+        System.out.println("| Karyawan |");
+        
+        System.out.println();
+        
+        Karyawan mainKaryawan = new Karyawan ();
+        
+        mainKaryawan.NIP = " 227064516091";
+        mainKaryawan.nama = " Sanda Fiona";
+        mainKaryawan.jenisKelamin = " Perempuan";
+        mainKaryawan.absenKerja = 4;
+        
+        System.out.println("NIP             :"+mainKaryawan.NIP);
+        System.out.println("Nama            :"+mainKaryawan.nama);
+        System.out.println("Jenis Kelamin   :"+mainKaryawan.jenisKelamin);
+        System.out.println("Absen Kerja     :"+mainKaryawan.absenKerja);
+        mainKaryawan.hitungGaji(32);
+        mainKaryawan.hitungGaji();
+        System.out.println();
+        
+        System.out.println("| Dosen |");
+        System.out.println();
+        Dosen mainDosen = new Dosen ();
+        
+        mainDosen.NIP = " 227064516077";
+        mainDosen.nama = " Camilla Anindya";
+        mainDosen.jenisKelamin = " Perempuan";
+        mainDosen.jumlahSks = 6;
+        mainDosen.upahPersks = 50000;
+        mainDosen.absenKerja = 8;
+        
+        mainDosen.golongan = " Golongan Dua";
+        
+        System.out.println("NIP             :"+mainDosen.NIP);
+        System.out.println("Nama            :"+mainDosen.nama);
+        System.out.println("Jenis Kelamin   :"+mainDosen.jenisKelamin);
+        System.out.println("Golongan        :"+mainDosen.golongan);
+        System.out.println("Absen Kerja     :"+mainDosen.absenKerja);
+        System.out.println("Jumlah SKS      :"+mainDosen.jumlahSks);
+        mainDosen.hitungGaji(20);
+        mainDosen.hitungGaji();
+        System.out.println();
+        
+        System.out.println("| Staff |");
+        System.out.println();
+        Staff mainStaff = new Staff ();
+        
+        mainStaff.NIP = " 2270645123";
+        mainStaff.nama = " Irawan ";
+        mainStaff.jenisKelamin = " Perempuan ";
+        mainStaff.absenKerja = 4;
+        
+        System.out.println("NIP             : "+mainStaff.NIP);
+        System.out.println("Nama            :"+mainStaff.nama);
+        System.out.println("Jenis Kelamin   : "+mainStaff.jenisKelamin);
+        System.out.println("Absen Kerja     :"+mainStaff.absenKerja);
+        mainStaff.hitungGaji(26);
+        mainStaff.hitungGaji();
+        System.out.println();
+    }
+    
+}
